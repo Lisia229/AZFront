@@ -1,5 +1,5 @@
 <template>
-  <div class="py-16 lg:py-4 px-4 w-full h-[100vh]">
+  <div class="py-16 lg:py-4 px-4 w-full h-full lg:h-[100vh]">
     <div class="w-full h-full px-4 py-4 flex flex-wrap mx-auto justify-center items-center rounded-lg md:flex-row">
       <div class="relative w-full lg:h-full lg:w-1/2 flex-col items-center justify-center p-4 leading-normal">
         <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="3000" class="lg:absolute z-30 lg:top-[20%] lg:right-[2%]">

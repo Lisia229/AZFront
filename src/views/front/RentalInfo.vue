@@ -3,7 +3,7 @@
     <div id="rentalintro" class="px-4 py-4">
       <h1 class="text-3xl pb-8 text-center">AZ文創園區 【場地租借辦法】</h1>
       <div class="flex flex-wrap">
-        <div class="w-[40%]">
+        <div class="w-full lg:w-[40%]">
           <p class="w-full pb-8 px-4">
             一、宗旨
             <br />
@@ -25,12 +25,12 @@
             若要申請，請填寫以下表單，工作日為3-5個工作天(不包含假日)，會有專人與您聯繫。
           </p>
         </div>
-        <div class="w-[60%]">
+        <div class="w-full lg:w-[60%]">
           <p class="py-3">一般場館</p>
 
           <div class="relative overflow-x-auto pb-3">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead class=" text-gray-700 uppercase bg-pink-50">
+              <thead class="text-gray-700 uppercase bg-pink-50">
                 <tr>
                   <th scope="col" class="px-6 py-3">場館名稱</th>
                   <th scope="col" class="px-6 py-3">總坪數</th>
@@ -51,9 +51,9 @@
         </div>
       </div>
     </div>
-    <div id="rentalform" class="w-full h-full px-4 py-4">
-      <div id="rentalForm" class="flex rounded-lg border-[1px] border-gray-100 shadow">
-        <div class="w-1/2">
+    <div class="w-full h-full px-4 py-4">
+      <div class="flex rounded-lg border-[1px] border-gray-100 shadow">
+        <div class="hidden lg:block lg:w-1/2">
           <img class="hidden h-full object-cover lg:block rounded-l-lg" src="../../assets/image/b01.jpg" />
         </div>
         <div class="flex-col py-4 px-4 relative justify-center items-center w-full">
