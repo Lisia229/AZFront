@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import FrontLayout from '../layout/FrontLayout.vue'
 import FrontHomeView from '../views/front/HomeView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import { useUserStore } from '@/stores/users'
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
