@@ -1,9 +1,9 @@
 <template>
-  <div id="ProductView" class="lg:pt-0">
+  <div id="ProductView" class="lg:pt-0 w-full h-full overflow-hidden">
     <swiper></swiper>
-    <div class="flex justify-between items-center">
+    <div class="flex w-full h-full justify-between items-center">
       <!-- !search -->
-      <div class="px-20 pt-8">
+      <div class="px-8 pt-8">
         <label for="table-search" class="sr-only">Search</label>
         <div class="relative mt-1">
           <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -24,7 +24,7 @@
         </div>
       </div>
       <!-- -button -->
-      <div class="px-20 pt-8">
+      <div class="hidden lg:block px-20 pt-8">
         <button
           id="dropdownDefaultButton"
           data-dropdown-toggle="dropdown"

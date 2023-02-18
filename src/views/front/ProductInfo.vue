@@ -120,7 +120,7 @@
     </div>
   </div>
   <h1 class="px-4">其他推薦商品</h1>
-  <div>
+  <div class="w-full h-full">
     <swipermoreVue></swipermoreVue>
   </div>
 </template>
