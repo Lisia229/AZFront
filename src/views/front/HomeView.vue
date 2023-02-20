@@ -1,16 +1,12 @@
-<template>
+<template id="template">
   <!-- -swiper -->
   <div id="swiperhome" class="pt-[70px] lg:pt-[100px]">
     <Swiper></Swiper>
   </div>
   <!-- -展覽 -->
   <div
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center"
-    class="h-full lg:h-[100vh] 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
+    id="HomeExhibitions"
+    class="box gs_revea h-full lg:h-[100vh] 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
     <div class="w-full pb-4 lg:pb-8">
       <div class="text-pinkP font-medium uppercase text-center tracking-widest">WHAT’S GOING ON</div>
     </div>
@@ -22,13 +18,7 @@
     </div>
   </div>
   <!-- -商店 -->
-  <div
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center"
-    class="h-full 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
+  <div class="box h-full 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
     <div class="w-full pb-4 lg:pb-8">
       <div class="text-pinkP font-medium uppercase text-center tracking-widest">SHOP</div>
     </div>
@@ -40,13 +30,7 @@
     </div>
   </div>
   <!-- -場地介紹 -->
-  <div
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center"
-    class="h-full py-4 px-4 md:py-8 md:px-8 lg:h-[100vh] lg:px-[100px] lg:py-16 2xl:h-full flex flex-wrap justify-center items-center w-full bg-[#FDFBF5]">
+  <div class="box h-full py-4 px-4 md:py-8 md:px-8 lg:h-[100vh] lg:px-[100px] lg:py-16 2xl:h-full flex flex-wrap justify-center items-center w-full bg-[#FDFBF5]">
     <div class="w-full lg:w-1/2 h-full px-4 py-4 lg:py-[100px] lg:px-[100px]">
       <span class="text-pinkP leading-10 font-medium uppercase text-center tracking-widest">ABOUT RENTAL</span>
       <div class="font-serif text-xl lg:text-[40px] leading-10 text-black font-bold lg:pt-[20px] lg:pb-[30px]">歡迎您發揮您的創意</div>
@@ -64,13 +48,7 @@
     </div>
   </div>
   <!-- -商品 -->
-  <div
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center"
-    class="h-full 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
+  <div class="box h-full 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
     <div class="w-full pb-4 lg:pb-8">
       <div class="text-pinkP font-medium uppercase text-center tracking-widest">products</div>
     </div>
@@ -83,13 +61,8 @@
   </div>
   <!-- -about Us -->
   <div
-    data-aos="fade-up"
-    data-aos-duration="1000"
-    data-aos-mirror="true"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center"
     id="followUs"
-    class="hidden h-full lg:h-[1000px] 2xl:h-[100vh] lg:flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-[80px]">
+    class="box hidden h-full lg:h-[1000px] 2xl:h-[100vh] lg:flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-[80px]">
     <div class="flex justify-center items-start">
       <div class="w-full flex flex-wrap justify-center items-center lg:w-1/2">
         <div class="w-full">
@@ -145,10 +118,8 @@
   </div>
 </template>
 <script setup>
-// import { reactive, computed } from 'vue'
-// import { api } from '@/plugins/axios'
-// import { useRouter } from 'vue-router'
-// import Swal from 'sweetalert2'
+import { onMounted } from 'vue'
+import imageView from '../../swiper/imageView.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import homeswiper from '../../swiper/homeswiper.vue'
@@ -156,34 +127,23 @@ import swipermoreVue from '../../swiper/homeproduct.vue'
 import Swiper from '../../components/SwiperHome.vue'
 import rentalhome from '../../swiper/rentalhome.vue'
 import shopswiper from '../../swiper/shopswiper.vue'
+
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 AOS.init()
+gsap.registerPlugin(ScrollTrigger)
 
-// const router = useRouter()
+onMounted(() => {
+  const boxes = gsap.utils.toArray('.box')
 
-// ;(async () => {
-//   try {
-//     const { data } = await api.get('/exhibitions')
-//     exhibitions.push(...data.result.splice(1, 3))
-//     exhibition_bigs.push(...data.result.splice(0, 1))
-
-//     // !資料要解構 data:新名字
-//     const { data: data2 } = await api.get('/stories')
-//     stories.push(...data2.result)
-//   } catch (error) {
-//     Swal.fire({
-//       icon: 'error',
-//       title: '失敗',
-//       text: error?.response?.data?.message || '發生錯誤'
-//     })
-//     console.log(error)
-//   }
-// })()
-
-// const info = id => {
-//   router.push(`exhibition/${id}`)
-// }
-
-// const store = id => {
-//   router.push(`stories/${id}`)
-// }
+  boxes.forEach((box, i) => {
+    const anim = gsap.fromTo(box, { autoAlpha: 0, y: 100 }, { duration: 1, autoAlpha: 1, y: 0 })
+    ScrollTrigger.create({
+      trigger: box,
+      animation: anim,
+      toggleActions: 'play none none reverse',
+      once: false
+    })
+  })
+})
 </script>

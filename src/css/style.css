@@ -295,3 +295,112 @@ input::-webkit-inner-spin-button {
 #storeinfo {
   line-height: 2.5rem;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+:root {
+  --gutter: 40px;
+  --image-width: 60vw;
+  --image-height: calc(100vh - 160px);
+  --image-max-height: 70vh;
+  --section-count: 3;
+
+  @media screen and (max-width: 800px) {
+    --gutter: 26px;
+  }
+}
+
+.images-wrapper {
+  display: flex;
+  width: calc(var(--section-count) * 100vw);
+  position: fixed;
+}
+
+.image-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: var(--image-width);
+  height: var(--image-height);
+  max-height: var(--image-max-height);
+  background-color: dodgerblue;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.text-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.text-wrapper {
+  width: var(--image-width);
+  height: var(--image-height);
+  max-height: var(--image-max-height);
+  overflow: visible;
+  font-family: 'Notable';
+  position: relative;
+}
+
+.title-container {
+  overflow: hidden;
+  position: relative;
+  font-size: 100px;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  width: 100vw;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  text-align: center;
+}
+
+.title-container .title-item {
+  transition: 0.5s ease-in-out;
+}
+
+.title-container .title-item:not(.active) {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: translateY(100%);
+}
+
+.date-container {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  text-align: right;
+  font-size: 28px;
+  color: white;
+  overflow: hidden;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ce0;
+}
+
+.date-container .date-item {
+  transition: 0.5s ease-in-out;
+}
+
+.date-container .date-item:not(.active) {
+  position: absolute;
+  right: 0;
+  transform: translateY(100%);
+}

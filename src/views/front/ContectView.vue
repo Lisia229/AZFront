@@ -108,6 +108,8 @@ import { apiAuth } from '@/plugins/axios'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Swal from 'sweetalert2'
+import { gsap } from 'gsap'
+
 AOS.init()
 
 const error = reactive({

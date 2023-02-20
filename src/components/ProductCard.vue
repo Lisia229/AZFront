@@ -1,5 +1,5 @@
 <template>
-  <a class="cursor-pointer">
+  <a id="productcard" class="cursor-pointer">
     <div class="lg:w-full relative mx-auto">
       <div class="w-full h-72">
         <img class="mt-4 object-cover h-full w-full md:w-96 md:h-72 mx-auto" :src="image" />

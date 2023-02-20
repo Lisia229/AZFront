@@ -1,6 +1,6 @@
 <template>
   <!-- -navbar -->
-  <nav id="navbar" class="bg-whiteF border-b lg:h-[100px] z-40 shadow w-full fixed border-gray-500 px-4 py-2.5 dark:bg-gray-900">
+  <nav ref="logo" id="navbar" class="bg-whiteF border-b lg:h-[100px] z-40 shadow w-full fixed border-gray-500 px-4 py-2.5 dark:bg-gray-900">
     <div class="container px-4 h-full flex flex-wrap items-center justify-between mx-auto">
       <router-link to="/" class="flex items-center">
         <img src="../assets/logo/zero.1.gif" class="mr-3 h-9 lg:h-[38px]" alt="Flowbite Logo" />
@@ -251,7 +251,7 @@
 <script setup>
 // import gsap from 'gsap'
 import { useRoute } from 'vue-router'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import {
   initAccordions,
   initCarousels,
@@ -265,11 +265,33 @@ import {
   initTabs,
   initTooltips
 } from 'flowbite'
-
 import { storeToRefs } from 'pinia'
 import { useUserStore } from '@/stores/users'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
-// gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, SplitText)
+const logo = ref(null)
+onMounted(() => {
+  gsap.from('#navbar', {
+    yPercent: -100,
+    paused: false,
+    duration: 0.5,
+    scrollTrigger: {
+      start: 'top 60',
+      end: () => '+=' + document.documentElement.scrollHeight, // end 為整份文件高度
+      onEnter(self) {
+        self.animation.play()
+      },
+      onUpdate(self) {
+        // self.direction -1 => 偵測到捲動軸往上
+        // self.direction 1 => 偵測到捲動軸往下
+        self.direction === -1 ? self.animation.play() : self.animation.reverse()
+      },
+      markers: false
+    }
+  })
+})
 
 const route = useRoute()
 const user = useUserStore()
