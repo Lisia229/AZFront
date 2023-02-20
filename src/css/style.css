@@ -14,6 +14,25 @@ body {
   position: relative;
 }
 
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1072.ani), url(https://cur.cursors-4u.net/anime/ani-11/ani1072.png), auto !important;
+  cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1072.ani), url(https://cur.cursors-4u.net/anime/ani-11/ani1072.png), -moz-zoom-out !important;
+  cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1072.ani), url(https://cur.cursors-4u.net/anime/ani-11/ani1072.png), pointer !important;
+}
+
+a:hover {
+  cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), auto !important;
+  cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), pointer !important;
+  cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), -moz-zoom-out !important;
+}
+
 #register {
   font-family: 'Open Sans', 'Noto Sans TC', sans-serif;
   width: 100%;

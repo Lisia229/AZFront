@@ -6,11 +6,13 @@
   <!-- -展覽 -->
   <div
     data-aos="fade-up"
-    data-aos-duration="1000"
     data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="false"
+    data-aos-anchor-placement="top-center"
     class="h-full lg:h-[100vh] 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
     <div class="w-full pb-4 lg:pb-8">
       <div class="text-pinkP font-medium uppercase text-center tracking-widest">WHAT’S GOING ON</div>
@@ -25,11 +27,13 @@
   <!-- -商店 -->
   <div
     data-aos="fade-up"
-    data-aos-duration="1000"
     data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="false"
+    data-aos-anchor-placement="top-center"
     class="h-full 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
     <div class="w-full pb-4 lg:pb-8">
       <div class="text-pinkP font-medium uppercase text-center tracking-widest">SHOP</div>
@@ -38,17 +42,19 @@
       <div class="text-black text-2xl lg:text-[40px] font-medium uppercase text-center tracking-normal font-serif">園區店家</div>
     </div>
     <div class="w-full h-full flex flex-wrap pb-8 justify-center items-center">
-      <shopswiper class="font-serif"></shopswiper>
+      <shopswiper></shopswiper>
     </div>
   </div>
   <!-- -場地介紹 -->
   <div
     data-aos="fade-up"
-    data-aos-duration="1000"
     data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="false"
+    data-aos-anchor-placement="top-center"
     class="h-full py-4 px-4 md:py-8 md:px-8 lg:h-[100vh] lg:px-[100px] lg:py-16 2xl:h-full flex flex-wrap justify-center items-center w-full bg-[#FDFBF5]">
     <div class="w-full lg:w-1/2 h-full px-4 py-4 lg:py-[100px] lg:px-[100px]">
       <span class="text-pinkP leading-10 font-medium uppercase text-center tracking-widest">ABOUT RENTAL</span>
@@ -69,11 +75,13 @@
   <!-- -商品 -->
   <div
     data-aos="fade-up"
-    data-aos-duration="1000"
     data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="false"
+    data-aos-anchor-placement="top-center"
     class="h-full 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-16">
     <div class="w-full pb-4 lg:pb-8">
       <div class="text-pinkP font-medium uppercase text-center tracking-widest">products</div>
@@ -88,13 +96,15 @@
   <!-- -about Us -->
   <div
     data-aos="fade-up"
-    data-aos-duration="1000"
     data-aos-offset="200"
+    data-aos-delay="50"
+    data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="false"
+    data-aos-anchor-placement="top-center"
     id="followUs"
-    class="h-full lg:h-[800px] 2xl:h-full flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-[80px]">
+    class="hidden h-full lg:h-[1000px] 2xl:h-[100vh] lg:flex flex-wrap justify-center items-center w-full py-4 px-4 md:py-8 md:px-8 lg:px-[100px] lg:py-[80px]">
     <div class="flex justify-center items-start">
       <div class="w-full flex flex-wrap justify-center items-center lg:w-1/2">
         <div class="w-full">

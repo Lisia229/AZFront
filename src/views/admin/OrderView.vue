@@ -27,8 +27,8 @@
           <td>NT. {{ order.totalPrice }}</td>
           <td>
             <ul>
-              <li v-for="product in order.products" :key="product._id">
-                {{ product.quantity + '個' + product._id }}
+              <li class="text-left" v-for="product in order.products" :key="product._id">
+                {{ product.quantity + '個' + product.data.name }}
               </li>
             </ul>
           </td>

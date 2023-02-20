@@ -39,9 +39,9 @@
               </router-link>
             </li>
             <li v-if="isLogin && isAdmin" to="/admin">
-              <a href="/admin" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+              <router-link to="/admin" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                 後台管理
-              </a>
+              </router-link>
             </li>
             <li v-if="isLogin">
               <router-link
@@ -84,7 +84,9 @@
         <ul
           class="flex flex-col p-4 mt-4 text-sm border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-base font-medium md:border-0 md:bg-whiteF">
           <li class="px-3" :class="{ 'text-blueB': route.path === '/' }">
-            <router-link to="/" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 whitespace-nowrap lg:text-md md:hover:bg-transparent md:hover:text-blueB md:p-0">首頁</router-link>
+            <router-link to="/" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 whitespace-nowrap lg:text-md md:hover:bg-transparent md:hover:text-blueB md:p-0">
+              首頁
+            </router-link>
           </li>
           <li class="px-3" :class="{ 'text-blueB': route.path === '/exhibition' }">
             <router-link
@@ -107,7 +109,7 @@
               聯名商品
             </router-link>
           </li>
-          <li class="px-3" :class="{ 'text-blueB': route.path === '/rental' }">
+          <li class="px-3" :class="{ 'text-blueB': ['/rental', '/rentalinfo'].includes(route.path) }">
             <div
               id="dropdownHoverButton"
               data-dropdown-toggle="dropdownHover"
