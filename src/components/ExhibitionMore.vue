@@ -10,7 +10,8 @@
           {{ place }}
         </span>
         <span
-          class="hidden lg:right-0 lg:bottom-1 lg:absolute lg:flex whitespace-nowrap items-center justify-center px-3 py-1 mx-3 text-xs font-medium text-center rounded-lg bg-blueB text-white hover:bg-white hover:text-blueB hover:border-[1px] hover:border-blueB">
+          class="hidden lg:right-0 lg:bottom-1 lg:absolute lg:flex whitespace-nowrap items-center justify-center px-3 py-1 mx-3 text-xs font-medium text-center rounded-lg text-white hover:bg-white hover:border-[1px]"
+          :class="['bg-' + color, 'hover:text-' + color, 'hover:border-' + color]">
           {{ category }}
         </span>
       </div>
@@ -65,6 +66,10 @@ defineProps({
     default: false
   },
   category: {
+    type: String,
+    default: ''
+  },
+  color: {
     type: String,
     default: ''
   }

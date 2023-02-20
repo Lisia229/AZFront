@@ -145,8 +145,6 @@ const { editCart, checkout } = user
 const cart = reactive([])
 
 const updateCart = async (index, quantity) => {
-  //exhibitions
-  //products
   const sumbitData = {
     quantity
   }

@@ -6,8 +6,6 @@
   <!-- -展覽 -->
   <div
     data-aos="fade-up"
-    data-aos-offset="200"
-    data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
@@ -27,8 +25,6 @@
   <!-- -商店 -->
   <div
     data-aos="fade-up"
-    data-aos-offset="200"
-    data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
@@ -48,8 +44,6 @@
   <!-- -場地介紹 -->
   <div
     data-aos="fade-up"
-    data-aos-offset="200"
-    data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
@@ -75,8 +69,6 @@
   <!-- -商品 -->
   <div
     data-aos="fade-up"
-    data-aos-offset="200"
-    data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
@@ -96,8 +88,6 @@
   <!-- -about Us -->
   <div
     data-aos="fade-up"
-    data-aos-offset="200"
-    data-aos-delay="50"
     data-aos-duration="1000"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
