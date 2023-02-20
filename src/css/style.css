@@ -33,6 +33,12 @@ a:hover {
   cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), -moz-zoom-out !important;
 }
 
+button:hover {
+  cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), auto !important;
+  cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), pointer !important;
+  cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), -moz-zoom-out !important;
+}
+
 #register {
   font-family: 'Open Sans', 'Noto Sans TC', sans-serif;
   width: 100%;
