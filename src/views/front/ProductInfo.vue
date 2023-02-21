@@ -1,7 +1,7 @@
 <template>
   <div id="productInfo" class="relative py-8">
     <!-- -navbar -->
-    <nav class="px-4 py-4 lg:pb-6 lg:py-10 w-full z-10 bg-white fixed" aria-label="Breadcrumb">
+    <nav class="navbar px-4 py-4 lg:pb-6 lg:py-10 w-full z-10 bg-white fixed" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
           <router-link to="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-pinkP">
@@ -126,7 +126,7 @@
 </template>
 <script setup>
 import { storeToRefs } from 'pinia'
-import { reactive, ref, computed, watch } from 'vue'
+import { reactive, ref, computed, watch, onMounted } from 'vue'
 import { api } from '@/plugins/axios'
 import Swal from 'sweetalert2'
 import { useRoute } from 'vue-router'
@@ -135,11 +135,33 @@ import 'aos/dist/aos.css'
 import ProductSwiper from '../../components/ProductSwipwe.vue'
 import swipermoreVue from '../../components/swipermore.vue'
 import router from '../../router'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useUserStore } from '@/stores/users'
+gsap.registerPlugin(ScrollTrigger)
 
 AOS.init()
 const route = useRoute()
-
+onMounted(() => {
+  gsap.from('.navbar', {
+    yPercent: -100,
+    paused: false,
+    duration: 0.5,
+    scrollTrigger: {
+      start: 'top 60',
+      end: () => '+=' + document.documentElement.scrollHeight, // end 為整份文件高度
+      onEnter(self) {
+        self.animation.play()
+      },
+      onUpdate(self) {
+        // self.direction -1 => 偵測到捲動軸往上
+        // self.direction 1 => 偵測到捲動軸往下
+        self.direction === -1 ? self.animation.play() : self.animation.reverse()
+      },
+      markers: false
+    }
+  })
+})
 const user = useUserStore()
 const { editCart, editLove } = user
 const { love } = storeToRefs(user)

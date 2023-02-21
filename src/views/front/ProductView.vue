@@ -39,10 +39,15 @@
             type="button"
             :class="{ 'text-white bg-black': filterMain === buttonCategorie }"
             @click="filterMain = buttonCategorie"
-            class="hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+            class="hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
             {{ buttonCategorie }}
           </button>
         </div>
+        <div class="hidden bg-yellowY hover:text-yellowY hover:border-yellowY"></div>
+        <div class="hidden hover:text-greenG hover:border-greenG bg-greenG"></div>
+        <div class="hidden hover:border-purpleP bg-purpleP hover:text-purpleP"></div>
+        <div class="hidden hover:border-[#333] bg-[#333] hover:text-[#333]"></div>
+        <div class="hidden hover:border-lightblue bg-lightblue hover:text-lightblue"></div>
       </div>
     </section>
     <hr class="h-px my-4 lg:flex lg:bg-gray-500 lg:border-0 dark:bg-gray-700" />
@@ -111,7 +116,7 @@ const buttonColors = {
   包包: 'lightblue',
   文創: 'greenG',
   文具: 'purpleP',
-  飾品: 'lightblue',
+  飾品: 'yellowY',
   其他: '[#333]'
 }
 

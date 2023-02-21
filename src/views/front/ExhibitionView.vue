@@ -104,6 +104,8 @@
           </li>
         </ul>
       </nav>
+
+      <div class="hidden text-yellowY bg-greenG hover:text-purpleP"></div>
     </section>
   </div>
 </template>

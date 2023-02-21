@@ -1,8 +1,7 @@
 <template>
-  <!-- data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="1000" -->
-  <div id="storeinfo" class="lg:flex ms:flex-col overflow-x-hidden">
+  <div id="storeinfo" class="lg:flex pt-10 ms:flex-col overflow-x-hidden">
     <!-- -navbar -->
-    <nav class="px-4 py-4 lg:pb-6 lg:py-10 w-full z-10 bg-white fixed" aria-label="Breadcrumb">
+    <nav class="navbar px-4 py-4 lg:pb-6 lg:pt-10 w-full z-10 bg-white fixed" aria-label="Breadcrumb">
       <ol class="inline-flex items-center space-x-1 md:space-x-3">
         <li class="inline-flex items-center">
           <router-link to="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-pinkP">
@@ -99,7 +98,7 @@
   </div>
 </template>
 <script setup>
-import { reactive, watch } from 'vue'
+import { reactive, watch, onMounted } from 'vue'
 import { api } from '@/plugins/axios'
 import Swal from 'sweetalert2'
 import { useRoute } from 'vue-router'
@@ -107,7 +106,32 @@ import swiperinfoVue from '../../components/swiperinfo.vue'
 import AOS from 'aos'
 import swiperstoremore from '../../components/swiperstoremore.vue'
 import 'aos/dist/aos.css'
+
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 AOS.init()
+
+onMounted(() => {
+  gsap.from('.navbar', {
+    yPercent: -100,
+    paused: false,
+    duration: 0.5,
+    scrollTrigger: {
+      start: 'top 60',
+      end: () => '+=' + document.documentElement.scrollHeight, // end 為整份文件高度
+      onEnter(self) {
+        self.animation.play()
+      },
+      onUpdate(self) {
+        // self.direction -1 => 偵測到捲動軸往上
+        // self.direction 1 => 偵測到捲動軸往下
+        self.direction === -1 ? self.animation.play() : self.animation.reverse()
+      },
+      markers: false
+    }
+  })
+})
 const route = useRoute()
 
 const storeinfo = reactive({
