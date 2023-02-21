@@ -3,7 +3,10 @@
     <div class="mt-4 md:mt-0">
       <h2 class="mb-4 text-4xl tracking-normal font-extrabold text-gray-900 dark:text-white">{{ name }}</h2>
       <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
-        {{ description }}
+        {{ suggest }}
+      </p>
+      <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+        {{ number }}
       </p>
       <button
         type="button"
@@ -42,7 +45,7 @@ defineProps({
     default: ''
   },
   images: {
-    type:Array,
+    type: Array,
     default: ''
   },
   size: {

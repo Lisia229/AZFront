@@ -26,7 +26,7 @@
       <div class="text-black text-2xl lg:text-[40px] font-medium uppercase text-center tracking-normal font-serif">園區店家</div>
     </div>
     <div class="w-full h-full flex flex-wrap pb-8 justify-center items-center">
-      <shopswiper></shopswiper>
+      <shopswiper class="font-serif"></shopswiper>
     </div>
   </div>
   <!-- -場地介紹 -->
