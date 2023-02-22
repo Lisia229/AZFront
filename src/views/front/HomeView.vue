@@ -119,25 +119,22 @@
 </template>
 <script setup>
 import { onMounted } from 'vue'
-import imageView from '../../swiper/imageView.vue'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+// import imageView from '../../swiper/imageView.vue'
 import homeswiper from '../../swiper/homeswiper.vue'
 import swipermoreVue from '../../swiper/homeproduct.vue'
 import Swiper from '../../components/SwiperHome.vue'
 import rentalhome from '../../swiper/rentalhome.vue'
 import shopswiper from '../../swiper/shopswiper.vue'
 
-import { gsap } from 'gsap'
+import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-AOS.init()
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   const boxes = gsap.utils.toArray('.box')
 
   boxes.forEach((box, i) => {
-    const anim = gsap.fromTo(box, { autoAlpha: 0, y: 100 }, { duration: 1, autoAlpha: 1, y: 0 })
+    const anim = gsap.fromTo(box, { autoAlpha: 0, y: 150 }, { duration: 1, autoAlpha: 1, y: 0 })
     ScrollTrigger.create({
       trigger: box,
       animation: anim,
