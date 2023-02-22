@@ -237,78 +237,91 @@
     </section>
 
     <!-- -列出 -->
-    <div id="exhibition-list" class="grid mb-8 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-3">
-      <div
-        id="card"
-        v-for="(exhibition, index) in showPageData"
-        :key="exhibition._id"
-        class="flex flex-col items-center justify-center p-8 text-center bg-whiteF rounded-t-lg md:rounded-t-none md:rounded-tl-lg dark:bg-gray-800 dark:border-gray-700">
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <a href="#">
-            <img class="rounded-t-lg h-60" :src="exhibition.image" />
-          </a>
-          <div class="p-5">
-            <a href="#">
-              <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">{{ exhibition.name }}</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              {{ new Date(exhibition.dateStart).toLocaleDateString() }} ~ {{ new Date(exhibition.dateEnd).toLocaleDateString() }}
-            </p>
-            <button
-              type="button"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blueB rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              @click="editBtn(exhibition)">
-              編輯
-              <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <div id="exhibition-list" class="rounded-lg">
+      <table class="w-full table-fixed text-left text-gray-500">
+        <thead class="text-base text-white uppercase bg-black">
+          <tr>
+            <th scope="col" class="px-6 py-3">展覽照片</th>
+            <th scope="col" class="px-6 py-3">展覽名稱</th>
+            <th scope="col" class="px-6 py-3">票卷價格</th>
+            <th scope="col" class="px-6 py-3">展覽分類</th>
+            <th scope="col" class="px-6 py-3">展覽日期</th>
+            <th scope="col" class="px-6 py-3">編輯</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(exhibition, index) in showPageData" :key="exhibition._id" class="bg-gray-100 border-b hover:bg-gray-200">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+              <img class="w-44" :src="exhibition.image" />
+            </th>
+            <td class="px-6 py-4">{{ exhibition.name }}</td>
+            <td class="px-6 py-4">NT. {{ exhibition.price }}</td>
+            <td class="px-6 py-4">{{ exhibition.category }}</td>
+            <td class="px-6 py-4">{{ new Date(exhibition.dateStart).toLocaleDateString() }} ~ {{ new Date(exhibition.dateEnd).toLocaleDateString() }}</td>
+            <td class="px-6 py-4">
+              <button
+                type="button"
+                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg hover:bg-blueB focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                @click="editBtn(exhibition)">
+                編輯
+                <svg class="h-3.5 w-3.5 ml-2" fill="#fff" width="25px" height="25px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <g data-name="Layer 2">
+                      <g data-name="edit-2">
+                        <rect width="24" height="24" opacity="0"></rect>
+                        <path d="M19 20H5a1 1 0 0 0 0 2h14a1 1 0 0 0 0-2z"></path>
+                        <path
+                          d="M5 18h.09l4.17-.38a2 2 0 0 0 1.21-.57l9-9a1.92 1.92 0 0 0-.07-2.71L16.66 2.6A2 2 0 0 0 14 2.53l-9 9a2 2 0 0 0-.57 1.21L4 16.91a1 1 0 0 0 .29.8A1 1 0 0 0 5 18zM15.27 4L18 6.73l-2 1.95L13.32 6zm-8.9 8.91L12 7.32l2.7 2.7-5.6 5.6-3 .28z"></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav class="grid items-center justify-center px-4 py-4 mx-auto" aria-label="Pagenavigationexample">
+        <ul class="mx-auto inline-flex items-center -space-x-px">
+          <li>
+            <a
+              href="#"
+              aria-current="page"
+              class="block px-3 py-2 ml-0 leading-tight text-gray-500 rounded-l-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <span class="sr-only">Previous</span>
+              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                   clip-rule="evenodd"></path>
               </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+            </a>
+          </li>
+          <li v-for="page in totalPage" @click="currentPage = page">
+            <p
+              :class="{ 'text-white bg-pinkP': currentPage === page }"
+              class="z-10 px-3 py-2 leading-tight hover:bg-pinkP hover:text-white dark:border-gray-700 dark:bg-gray-700 dark:text-white">
+              {{ page }}
+            </p>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-3 py-2 leading-tight text-gray-500 rounded-r-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              <span class="sr-only">Next</span>
+              <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-
-    <nav class="grid items-center justify-center px-4 py-4 mx-auto" aria-label="Pagenavigationexample">
-      <ul class="mx-auto inline-flex items-center -space-x-px">
-        <li>
-          <a
-            href="#"
-            aria-current="page"
-            class="block px-3 py-2 ml-0 leading-tight text-gray-500 rounded-l-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            <span class="sr-only">Previous</span>
-            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill-rule="evenodd"
-                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </a>
-        </li>
-        <li v-for="page in totalPage" @click="currentPage = page">
-          <p
-            :class="{ 'text-white bg-pinkP': currentPage === page }"
-            class="z-10 px-3 py-2 leading-tight hover:bg-pinkP hover:text-white dark:border-gray-700 dark:bg-gray-700 dark:text-white">
-            {{ page }}
-          </p>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block px-3 py-2 leading-tight text-gray-500 rounded-r-lg dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-            <span class="sr-only">Next</span>
-            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path
-                fill-rule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </a>
-        </li>
-      </ul>
-    </nav>
   </div>
 </template>
 
@@ -337,7 +350,7 @@ const exhibitions = reactive([])
 const searchValue = ref('')
 
 // -分頁
-const limit = 6
+const limit = 5
 // -ref要加value
 const currentPage = ref(1)
 

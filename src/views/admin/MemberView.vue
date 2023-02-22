@@ -222,7 +222,7 @@ const filterData = computed(() => {
 
   const membersList = members.filter(item => {
     if (isSearch) {
-      return item.account.includes(searchValue.value)
+      return item.account.toUpperCase().includes(searchValue.value.toUpperCase())
     } else {
       if (filterMain.value === '全部') return item
       return item.category === filterMain.value
