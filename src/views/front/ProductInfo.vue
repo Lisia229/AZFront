@@ -135,33 +135,33 @@ import 'aos/dist/aos.css'
 import ProductSwiper from '../../components/ProductSwipwe.vue'
 import swipermoreVue from '../../components/swipermore.vue'
 import router from '../../router'
-import { gsap } from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+// import { gsap } from 'gsap'
+// import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useUserStore } from '@/stores/users'
-gsap.registerPlugin(ScrollTrigger)
+// gsap.registerPlugin(ScrollTrigger)
 
 AOS.init()
 const route = useRoute()
-onMounted(() => {
-  gsap.from('.navbar', {
-    yPercent: -100,
-    paused: false,
-    duration: 0.5,
-    scrollTrigger: {
-      start: 'top 60',
-      end: () => '+=' + document.documentElement.scrollHeight, // end 為整份文件高度
-      onEnter(self) {
-        self.animation.play()
-      },
-      onUpdate(self) {
-        // self.direction -1 => 偵測到捲動軸往上
-        // self.direction 1 => 偵測到捲動軸往下
-        self.direction === -1 ? self.animation.play() : self.animation.reverse()
-      },
-      markers: false
-    }
-  })
-})
+// onMounted(() => {
+//   gsap.from('.navbar', {
+//     yPercent: -100,
+//     paused: false,
+//     duration: 0.5,
+//     scrollTrigger: {
+//       start: 'top 60',
+//       end: () => '+=' + document.documentElement.scrollHeight, // end 為整份文件高度
+//       onEnter(self) {
+//         self.animation.play()
+//       },
+//       onUpdate(self) {
+//         // self.direction -1 => 偵測到捲動軸往上
+//         // self.direction 1 => 偵測到捲動軸往下
+//         self.direction === -1 ? self.animation.play() : self.animation.reverse()
+//       },
+//       markers: false
+//     }
+//   })
+// })
 const user = useUserStore()
 const { editCart, editLove } = user
 const { love } = storeToRefs(user)
