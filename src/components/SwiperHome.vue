@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="w-full overflow-hidden">
     <section class="slides">
       <section class="slides-nav">
         <!-- <nav class="slides-nav__nav">
