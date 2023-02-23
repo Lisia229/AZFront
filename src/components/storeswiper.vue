@@ -1,66 +1,64 @@
 <template>
   <swiper
-  :spaceBetween="30"
+    :spaceBetween="30"
     :centeredSlides="true"
     :autoplay="{
       delay: 3000,
-      disableOnInteraction: false,
+      disableOnInteraction: false
     }"
     :navigation="false"
     :modules="modules"
-    class="mySwiper"
-  >
+    class="mySwiper">
     <swiper-slide>
-      <img src="../assets/image/s01.jpg" alt="">
+      <img src="../assets/image/s01.jpg" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img src="../assets/image/s02.jpeg" alt="">
+      <img src="../assets/image/s02.jpeg" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img src="../assets/image/s03.jpg" alt="">
+      <img src="../assets/image/s03.jpg" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img src="../assets/image/s04.jpg" alt="">
+      <img src="../assets/image/s04.jpg" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img src="../assets/image/s05.jpg" alt="">
+      <img src="../assets/image/s05.jpg" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img src="../assets/image/s06.jpg" alt="">
+      <img src="../assets/image/s06.jpg" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img src="../assets/image/s07.jpg" alt="">
+      <img src="../assets/image/s07.jpg" alt="" />
     </swiper-slide>
     <swiper-slide>
-      <img src="../assets/image/s08.jpg" alt="">
+      <img src="../assets/image/s08.jpg" alt="" />
     </swiper-slide>
-  
   </swiper>
 </template>
 <script>
-  import { ref } from 'vue';
-  // Import Swiper Vue.js components
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+import { ref } from 'vue'
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue'
 
-  // Import Swiper styles
-  import 'swiper/css';
+// Import Swiper styles
+import 'swiper/css'
 
-  import 'swiper/css/pagination';
-  import 'swiper/css/navigation';
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
-  import { Autoplay, Pagination, Navigation } from 'swiper';
+import { Autoplay, Pagination, Navigation } from 'swiper'
 
-  export default {
-    components: {
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-      return {
-        modules: [Autoplay, Pagination, Navigation],
-      };
-    },
-  };
+export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  setup() {
+    return {
+      modules: [Autoplay, Pagination, Navigation]
+    }
+  }
+}
 </script>
 <style scoped>
 .swiper {
@@ -115,5 +113,4 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
-
 </style>

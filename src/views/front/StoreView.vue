@@ -2,7 +2,7 @@
   <div id="storeView" class="lg:pt-0">
     <swiper></swiper>
     <div v-for="storie in stories" :key="storie._id">
-      <StoreCard v-bind="storie" @click="store(storie._id)"></StoreCard>
+      <StoreCard data-aos="fade-up" data-aos-duration="1500" v-bind="storie" @click="store(storie._id)"></StoreCard>
     </div>
   </div>
 </template>
@@ -13,7 +13,9 @@ import Swal from 'sweetalert2'
 import { useRouter } from 'vue-router'
 import swiper from '../../components/storeswiper.vue'
 import StoreCard from '../../components/StoreCard.vue'
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+AOS.init()
 const stories = reactive([])
 const router = useRouter()
 
