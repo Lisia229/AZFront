@@ -1,120 +1,227 @@
 <template>
-  <swiper
-    :spaceBetween="30"
-    :loop="true"
-    :centeredSlides="true"
-    :autoplay="{
-      delay: 3000,
-      disableOnInteraction: false
-    }"
-    :navigation="true"
-    :modules="modules"
-    class="mySwiper">
-    <swiper-slide>
-      <img src="../assets/image/h01.jpeg" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h02.jpeg" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h03.png" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h04.jpeg" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h05.jpeg" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h06.jpeg" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h07.jpeg" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h08.png" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="../assets/image/h09.jpeg" />
-    </swiper-slide>
-  </swiper>
+  <main>
+    <section class="slides">
+      <section class="slides-nav">
+        <!-- <nav class="slides-nav__nav">
+          <button class="slides-nav__prev js-prev">Prev</button>
+          <button class="slides-nav__next js-next">Next</button>
+        </nav> -->
+      </section>
+
+      <section class="slide is-active">
+        <div class="slide__content">
+          <figure class="slide__figure"><div class="slide__img"></div></figure>
+          <header class="slide__header">
+            <h2 class="slide__title">
+              <span data-aos="fade-right" data-aos-duration="1500" data-aos-delay="1000" class="title-line">
+                <span>AZ.ZERO</span>
+              </span>
+              <span data-aos="fade-right" data-aos-duration="1500" data-aos-delay="2000" class="title-line">
+                <span>WELCOME</span>
+              </span>
+            </h2>
+          </header>
+        </div>
+      </section>
+    </section>
+  </main>
 </template>
-<script>
-import { ref } from 'vue'
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue'
 
-// Import Swiper styles
-import 'swiper/css'
+<script setup>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+AOS.init()
+</script>
 
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
+<style scoped>
+body {
+  height: 100%;
+  overflow-y: hidden;
+}
 
-import { Autoplay, Pagination, Navigation } from 'swiper'
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide
-  },
-  setup() {
-    return {
-      modules: [Autoplay, Pagination, Navigation]
-    }
+.slides-nav {
+  z-index: 99;
+  position: fixed;
+  right: -5%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #111;
+}
+@media (min-width: 54em) {
+  .slides-nav {
+    right: 2%;
   }
 }
-</script>
-<style scoped>
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.swiper-slide img {
+.slides-nav__nav {
+  position: relative;
+  right: 0;
   display: block;
+  font-size: 1em;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+.slides-nav button {
+  position: relative;
+  display: inline-block;
+  padding: 0.35em;
+  margin: 0;
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  overflow-x: hidden;
+  transition: color 0.5s ease;
+}
+.slides-nav button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background: #111;
+  transition: width 0.4s ease;
+}
+.slides-nav button:hover {
+  cursor: pointer;
+  color: rgba(17, 17, 17, 0.75);
+  transition: color 0.5s ease;
+}
+.slides-nav button:hover:after {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  transition: width 0.4s ease;
+}
+.slides-nav button:focus {
+  outline: 0;
+}
+.is-sliding .slides-nav {
+  pointer-events: none;
 }
 
-.autoplay-progress {
+.slides {
+  position: relative;
+  display: block;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  transition: background 1s cubic-bezier(0.99, 1, 0.92, 1);
+}
+.is-sliding .slides {
+  background: #ededed;
+  transition: background 0.3s cubic-bezier(0.99, 1, 0.92, 1);
+}
+
+.slide {
+  z-index: -1;
+  padding: 0;
   position: absolute;
-  right: 16px;
-  bottom: 16px;
-  z-index: 10;
-  width: 48px;
-  height: 48px;
+  width: 100%;
+  height: 100vh;
+  transition: z-index 1s ease;
+}
+.slide.is-active {
+  z-index: 19;
+  transition: z-index 1s ease;
+}
+.slide__content {
+  position: relative;
+  margin: 0 auto;
+  height: 95%;
+  width: 95%;
+  top: 2.5%;
+}
+@media (min-width: 54em) {
+  .slide__content {
+    height: 80%;
+    width: 80%;
+    top: 10%;
+  }
+}
+.slide__header {
+  z-index: 9;
+  position: relative;
+  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: var(--swiper-theme-color);
+  overflow-y: hidden;
+  transform: translateX(5%);
 }
-
-.autoplay-progress svg {
-  --progress: 0;
+@media (min-width: 54em) {
+  .slide__header {
+    transform: translateX(-5%);
+  }
+}
+.slide__title {
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  color: #111;
+  overflow-y: hidden;
+}
+@media (min-width: 54em) {
+  .slide__title {
+    font-size: 5em;
+  }
+}
+.slide__title .title-line {
+  display: block;
+  overflow-y: hidden;
+}
+.slide__title .title-line span {
+  display: inline-block;
+  transform: translate3d(0, 140%, 0);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.8s ease;
+}
+.slide__title .title-line span:nth-child(1) {
+  transition-delay: 0.15s;
+}
+.slide__title .title-line span:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.is-active .slide__title .title-line span {
+  transform: translate3d(0, 0%, 0);
+  opacity: 1;
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.1s ease;
+}
+.is-active .slide__title .title-line:nth-of-type(2n) span {
+  transition-delay: 0.2s;
+}
+.slide__figure {
+  z-index: 7;
   position: absolute;
   left: 0;
-  top: 0px;
-  z-index: 10;
-  width: 100%;
+  right: 0;
+  margin: 0 auto;
   height: 100%;
-  stroke-width: 4px;
-  stroke: var(--swiper-theme-color);
-  fill: none;
-  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
-  stroke-dasharray: 125.6;
-  transform: rotate(-90deg);
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
+.is-sliding .slide__figure {
+  transform: scale(0.8);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.slide__img {
+  position: relative;
+  display: block;
+  background: url(../assets/image/main-visual-01.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50%;
+  height: 0%;
+  width: 100%;
+  filter: grayscale(0%);
+  transition: height 1s 1.4s cubic-bezier(0.19, 1, 0.22, 1), filter 0.4s 0.1s ease;
+}
+.is-active .slide__img {
+  height: 100%;
+  opacity: 1;
+  transition: height 0.5s 0.3s cubic-bezier(0.77, 0, 0.175, 1), filter 0.4s 0.1s ease;
+}
+.is-sliding .slide__img {
+  filter: grayscale(100%);
+} /*# sourceMappingURL=swiper.css.map */
 </style>

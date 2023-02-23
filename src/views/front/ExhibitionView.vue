@@ -1,6 +1,6 @@
 <template>
   <div id="frontHome" class="px-10 lg:pt-0">
-    <div id="swiper">
+    <div id="swiper" class="w-full h-[100vh]">
       <swiper></swiper>
     </div>
     <!-- <section class="bg-whiteF dark:bg-gray-900">
@@ -50,9 +50,9 @@
         <div class="col" v-for="(buttonCategorie, index) in buttonCategories">
           <button
             type="button"
-            :class="{ 'text-white bg-black': filterMain === buttonCategorie }"
+            :class="{ 'text-white bg-black': filterMain === buttonCategorie, 'button-color-transition': true }"
             @click="filterMain = buttonCategorie"
-            class="hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">
+            class="hover:text-white border border-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
             {{ buttonCategorie }}
           </button>
         </div>

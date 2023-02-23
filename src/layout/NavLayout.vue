@@ -1,5 +1,5 @@
 <template>
-  <nav id="navbar" class="bg-whiteF border-b lg:h-[100px] z-40 shadow w-full fixed border-gray-500 px-4 py-2.5 dark:bg-gray-900">
+  <nav id="navbar" class="bg-whiteF border-b lg:h-[100px] z-40 shadow w-full fixed border-gray-500 px-4 py-2.5 dark:bg-gray-900 top-0 left-0">
     <div class="container px-4 h-full flex flex-wrap items-center justify-between mx-auto">
       <router-link to="/" class="flex items-center">
         <img src="../assets/logo/zero.1.gif" class="mr-3 h-9 lg:h-[38px]" alt="Flowbite Logo" />
@@ -79,41 +79,41 @@
           </svg>
         </button>
       </div>
-      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
+      <div id="mobile-menu-2" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
         <ul
-          class="flex flex-col p-4 mt-4 text-sm border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-base font-medium md:border-0 md:bg-whiteF">
-          <li class="px-3" :class="{ 'text-blueB': route.path === '/' }">
+          class="flex flex-col p-4 mt-4 text-md border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-base font-medium md:border-0 md:bg-whiteF">
+          <li class="px-3 py-4 md:py-0" :class="{ 'text-blueB': route.path === '/' }">
             <router-link to="/" class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 whitespace-nowrap lg:text-md md:hover:bg-transparent md:hover:text-blueB md:p-0">
               首頁
             </router-link>
           </li>
-          <li class="px-3" :class="{ 'text-blueB': route.path === '/exhibition' }">
+          <li class="px-3 py-4 md:py-0" :class="{ 'text-blueB': route.path === '/exhibition' }">
             <router-link
               to="/exhibition"
               class="block whitespace-nowrap lg:text-md py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blueB md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
               展覽介紹
             </router-link>
           </li>
-          <li class="px-3" :class="{ 'text-blueB': route.path === '/store' }">
+          <li class="px-3 py-4 md:py-0" :class="{ 'text-blueB': route.path === '/store' }">
             <router-link
               to="/store"
               class="block whitespace-nowrap lg:text-md py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blueB md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
               進駐店家
             </router-link>
           </li>
-          <li class="px-3" :class="{ 'text-blueB': route.path === '/product' }">
+          <li class="px-3 py-4 md:py-0" :class="{ 'text-blueB': route.path === '/product' }">
             <router-link
               to="/product"
               class="block whitespace-nowrap lg:text-md py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blueB md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
               聯名商品
             </router-link>
           </li>
-          <li class="px-3" :class="{ 'text-blueB': ['/rental', '/rentalinfo'].includes(route.path) }">
+          <li class="px-3 py-4 md:py-0" :class="{ 'text-blueB': ['/rental', '/rentalinfo'].includes(route.path) }">
             <div
               id="dropdownHoverButton"
               data-dropdown-toggle="dropdownHover"
               data-dropdown-trigger="hover"
-              class="flex whitespace-nowrap lg:text-md py-2 px-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blueB md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+              class="flex whitespace-nowrap lg:text-md py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blueB md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
               場地租借
               <svg width="20px" height="20px" viewBox="0 0 1024 1024" fill="#000" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -135,7 +135,7 @@
               </ul>
             </div>
           </li>
-          <li class="px-3" :class="{ ' text-blueB': route.path === '/content' }">
+          <li class="px-3 py-4 md:py-0" :class="{ ' text-blueB': route.path === '/content' }">
             <router-link
               to="/content"
               class="block whitespace-nowrap lg:text-md py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blueB md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
@@ -151,32 +151,34 @@
 import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useUserStore } from '@/stores/users'
-import { onMounted } from 'vue'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
+// import { onMounted } from 'vue'
+// import gsap from 'gsap'
+// import ScrollTrigger from 'gsap/ScrollTrigger'
+
 const route = useRoute()
 const user = useUserStore()
 const { isLogin, isAdmin, account, email, image } = storeToRefs(user)
 const { logout } = user
-onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger)
-  gsap.from('#navbar', {
-    yPercent: -100,
-    paused: false,
-    duration: 0.5,
-    scrollTrigger: {
-      start: 'top 60',
-      end: () => '+=' + document.documentElement.scrollHeight, // end 為整份文件高度
-      onEnter(self) {
-        self.animation.play()
-      },
-      onUpdate(self) {
-        // self.direction -1 => 偵測到捲動軸往上
-        // self.direction 1 => 偵測到捲動軸往下
-        self.direction === -1 ? self.animation.play() : self.animation.reverse()
-      },
-      markers: true
-    }
-  })
-})
+
+// onMounted(async () => {
+//   await nextTick()
+//   gsap.from('#navbar', {
+//     yPercent: -100,
+//     paused: false,
+//     duration: 0.5,
+//     scrollTrigger: {
+//       start: 'top 60',
+//       end: () => document.documentElement.scrollHeight, // end 為整份文件高度
+//       onEnter(self) {
+//         self.animation.play()
+//       },
+//       onUpdate(self) {
+//         // self.direction -1 => 偵測到捲動軸往上
+//         // self.direction 1 => 偵測到捲動軸往下
+//         self.direction === -1 ? self.animation.play() : self.animation.reverse()
+//       }
+//       // markers: true
+//     }
+//   })
+// })
 </script>

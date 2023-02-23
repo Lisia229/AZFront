@@ -21,12 +21,6 @@ body {
   box-sizing: border-box;
 }
 
-body {
-  cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1072.ani), url(https://cur.cursors-4u.net/anime/ani-11/ani1072.png), auto !important;
-  cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1072.ani), url(https://cur.cursors-4u.net/anime/ani-11/ani1072.png), -moz-zoom-out !important;
-  cursor: url(https://cur.cursors-4u.net/anime/ani-11/ani1072.ani), url(https://cur.cursors-4u.net/anime/ani-11/ani1072.png), pointer !important;
-}
-
 a:hover {
   cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), auto !important;
   cursor: url(https://cur.cursors-4u.net/food/foo-6/foo504.ani), url(https://cur.cursors-4u.net/food/foo-6/foo504.png), pointer !important;
@@ -416,4 +410,20 @@ input::-webkit-inner-spin-button {
 }
 #productcard2:hover::after {
   display: block;
+}
+
+.button-color-transition {
+  transition: background-color 0.3s ease-in-out;
+}
+
+#Pagenavigationexample {
+  transition: 0.5s;
+}
+
+#Pagenavigationexample:hover {
+  border-bottom: 1px solid #4484a5;
+}
+
+#homePimg img {
+  transition: 0.5s;
 }
