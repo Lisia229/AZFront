@@ -1,18 +1,18 @@
 <template>
   <div class="container flex flex-wrap items-center justify-between mx-auto">
-    <div id="register" class="relative">
+    <div id="register" class="relative h-full w-full">
       <div
         id="registerform"
         class="w-3/4 flex mx-auto md:grid md:grid-cols-12 rounded-xl shadow bg-whiteW justify-center items-start"
         data-aos="fade-left"
         data-aos-duration="1500"
         data-aos-delay="1500">
-        <div class="hidden w-full md:block md:col-span-5">
+        <div class="hidden w-full h-full md:block md:col-span-5">
           <img id="registerimg" class="rounded-l-xl" src="../../assets/image/b01.jpg" />
         </div>
-        <div class="w-full col-span-7">
-          <div class="w-full max-w-sm p-4 rounded-xl sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto">
-            <form @submit.prevent="registerHandler" class="space-y-4 md:space-y-6">
+        <div class="w-full h-full col-span-7">
+          <div class="w-full max-w-sm p-4 rounded-xl sm:p-6 md:p-8 mx-auto">
+            <form @submit.prevent="registerHandler" class="space-y-4 h-full md:space-y-1">
               <h1 class="text-xl font-bold leading-tight tracking-normal text-gray-900 md:text-2xl dark:text-white">Create and account</h1>
               <div>
                 <label for="email" class="flex mb-2 text-sm font-medium text-gray-900 dark:text-white">

@@ -96,6 +96,26 @@ button:hover {
   width: 100%;
 }
 
+@media (min-width: 1024px) {
+  #section02 {
+    display: block;
+  }
+}
+
+@media (min-width: 1300px) {
+  #login::before {
+    content: '';
+    width: 480px;
+    height: 544px;
+    position: absolute;
+    top: 25%;
+    left: 39%;
+    background: #f196a7;
+    border-radius: 10px;
+    z-index: -1;
+  }
+}
+
 #rentalView {
   padding-top: 100px;
 }
@@ -279,11 +299,6 @@ input::-webkit-inner-spin-button {
   width: 65px;
 }
 
-@media (min-width: 1024px) {
-  #section02 {
-    display: block;
-  }
-}
 
 #followUs {
   background: url(../assets/logo/img-mv-background_pc.png) no-repeat, #fdfbf5;
