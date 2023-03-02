@@ -51,23 +51,23 @@
           </div>
           <div class="border-2 w-full lg:w-1/3 px-4 py-4 text-lg border-gray-700 rounded-xl">
             <div class="pb-4">
-              <span class="text-gray-600 text-base">場地尺寸：</span>
+              <span class="text-gray-600">場地尺寸：</span>
               <span class="text-gray-800">{{ rentalinfo.size }}</span>
             </div>
             <div class="pb-4">
-              <span class="text-gray-600 text-base">場地價格：</span>
+              <span class="text-gray-600">場地價格：</span>
               <span class="text-gray-800">{{ rentalinfo.price }} / 日</span>
             </div>
             <div class="pb-4">
-              <span class="text-gray-600 text-base">場地可容納人數：</span>
+              <span class="text-gray-600">場地可容納人數：</span>
               <span class="text-gray-800">{{ rentalinfo.number }}</span>
             </div>
             <div class="pb-4">
-              <span class="text-gray-600 text-base">場地使用建議：</span>
+              <span class="text-gray-600">場地使用建議：</span>
               <div class="text-gray-800">{{ rentalinfo.suggest }}</div>
             </div>
             <div class="pb-4">
-              <span class="text-gray-600 text-base">場地相關資訊：</span>
+              <span class="text-gray-600">場地相關資訊：</span>
               <div class="text-gray-800">{{ rentalinfo.equipment }}</div>
             </div>
           </div>

@@ -17,45 +17,53 @@
 
     <hr class="h-px my-4 bg-gray-500 border-0 dark:bg-gray-700" />
     <section id="buttonCategorie" class="bg-whiteF dark:bg-gray-900">
-      <div class="row-auto items-center justify-between align-middle flex max-w-screen-xl px-4 py-4 mx-auto lg:gap-8 xl:gap-0 lg:py-4 lg:cols-12">
-        <div class="col">
-          <p class="max-w-2xl hidden md:block font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Exhibition</p>
-        </div>
-        <div class="col hidden lg:block">
-          <!-- !search -->
-          <div class="px-4 py-4">
-            <label for="table-search" class="sr-only">Search</label>
-            <div class="relative mt-1">
-              <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill-rule="evenodd"
-                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                    clip-rule="evenodd"></path>
-                </svg>
+      <div class="row-auto items-center justify-center align-middle flex max-w-screen-xl px-4 py-4 mx-auto lg:gap-8 xl:gap-0 lg:py-4 lg:cols-12">
+        <table class="table-fixed">
+          <tr>
+            <td>
+              <div class="col">
+                <p class="max-w-2xl hidden md:block font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Exhibition</p>
               </div>
-              <input
-                type="text"
-                id="table-search"
-                v-model="searchValue"
-                @change="currentPage = 1"
-                class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-100 focus:ring-pink-300 focus:border-pink-500"
-                placeholder="Search" />
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="line hidden md:block w-0.5 h-24 bg-gray-500"></div>
-        </div>
-        <div class="col" v-for="(buttonCategorie, index) in buttonCategories">
-          <button
-            type="button"
-            :class="{ 'text-white bg-black': filterMain === buttonCategorie, 'button-color-transition': true }"
-            @click="filterMain = buttonCategorie"
-            class="hover:text-white border border-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-            {{ buttonCategorie }}
-          </button>
-        </div>
+            </td>
+            <td>
+              <div class="col hidden lg:block">
+                <!-- !search -->
+                <div class="px-4 py-4">
+                  <label for="table-search" class="sr-only">Search</label>
+                  <div class="relative mt-1">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fill-rule="evenodd"
+                          d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                          clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      id="table-search"
+                      v-model="searchValue"
+                      @change="currentPage = 1"
+                      class="block p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-100 focus:ring-pink-300 focus:border-pink-500"
+                      placeholder="Search" />
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td>        <div class="col">
+          <div class="line hidden md:block 2xl:hidden w-0.5 h-24 bg-gray-500"></div>
+        </div></td>
+            <td v-for="(buttonCategorie, index) in buttonCategories">
+              <button
+                type="button"
+                :class="{ 'text-white bg-black': filterMain === buttonCategorie, 'button-color-transition': true }"
+                @click="filterMain = buttonCategorie"
+                class="hover:text-white border border-black hover:bg-black focus:ring-4 focus:outline-none focus:ring-gray-300 whitespace-nowrap font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2">
+                {{ buttonCategorie }}
+              </button>
+            </td>
+          </tr>
+        </table>
       </div>
     </section>
     <hr class="h-px my-4 lg:flex lg:bg-gray-500 lg:border-0 dark:bg-gray-700" />
