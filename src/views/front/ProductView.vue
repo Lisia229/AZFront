@@ -4,7 +4,7 @@
     <div class="flex w-full h-full justify-between items-center"></div>
     <hr class="h-px my-4 bg-gray-500 border-0 dark:bg-gray-700" />
     <section id="buttonCategorie" class="bg-whiteF dark:bg-gray-900">
-      <div class="row-auto items-center justify-between align-middle flex max-w-screen-xl px-4 py-4 mx-auto lg:gap-8 xl:gap-0 lg:py-4 lg:cols-12">
+      <div class="row-auto items-center justify-center align-middle flex max-w-screen-xl px-4 py-4 mx-auto lg:gap-8 xl:gap-0 lg:py-4 lg:cols-12">
         <div class="col">
           <p class="max-w-2xl hidden md:block font-light text-gray-500 md:text-lg lg:text-xl dark:text-gray-400">Products</p>
         </div>
