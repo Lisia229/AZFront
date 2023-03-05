@@ -67,7 +67,7 @@ button:hover {
 
 #login::before {
   content: '';
-  width: 380px;
+  width: 370px;
   height: 410px;
   position: absolute;
   top: 23%;
