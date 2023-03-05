@@ -33,5 +33,17 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",
     "vite": "^3.2.4"
-  }
+  },
+  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lisia229/AZFront.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lisia229/AZFront/issues"
+  },
+  "homepage": "https://github.com/Lisia229/AZFront#readme"
 }

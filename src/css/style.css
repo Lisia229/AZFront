@@ -68,7 +68,7 @@ button:hover {
 #login::before {
   content: '';
   width: 380px;
-  height: 420px;
+  height: 410px;
   position: absolute;
   top: 23%;
   left: 39%;
@@ -298,7 +298,6 @@ input::-webkit-inner-spin-button {
 #section02 img {
   width: 65px;
 }
-
 
 #followUs {
   background: url(../assets/logo/img-mv-background_pc.png) no-repeat, #fdfbf5;
