@@ -30,7 +30,7 @@ export const useUserStore = defineStore(
         email.value = data.result.email
         cart.value = data.result.cart
         role.value = data.result.role
-        image.value = data.result.image || `https://drive.google.com/file/d/1n6gfHE48cWzBKrIhk5PWDkTGrGilcLgR/view?usp=drive_link`
+        image.value = data.result.image || `https://api.dicebear.com/9.x/thumbs/svg?eyes=variant1W10,variant1W12,variant1W14,variant9W10,variant5W14,variant4W10`
         love.value = data.result.love
         Swal.fire({
           icon: 'success',
@@ -78,7 +78,7 @@ export const useUserStore = defineStore(
         email.value = data.result.email
         cart.value = data.result.cart
         role.value = data.result.role
-        image.value = data.result.image || `https://drive.google.com/file/d/1n6gfHE48cWzBKrIhk5PWDkTGrGilcLgR/view?usp=drive_link`
+        image.value = data.result.image || `https://api.dicebear.com/9.x/thumbs/svg?eyes=variant1W10,variant1W12,variant1W14,variant9W10,variant5W14,variant4W10`
         love.value = data.result.love
       } catch (error) {
         logout()
