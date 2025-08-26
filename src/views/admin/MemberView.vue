@@ -280,8 +280,16 @@ const submit = async () => {
   try {
     const { data } = await apiAuth.patch('/users/edituser', fd)
     const idx = members.findIndex(index => index._id === form._id)
+
+    // 安全生成 seed
+    const seed = encodeURIComponent(data.result.account || form.account)
+
     members[idx] = data.result
-    members[idx].image = members[idx].image || `https://source.boringavatars.com/beam/256/${account.value}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
+    members[idx].image =
+      data.result.image && data.result.image.trim() !== ''
+        ? data.result.image
+        : `https://source.boringavatars.com/beam/256/${seed}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
+
     form.editing = false
 
     Swal.fire({
@@ -299,12 +307,19 @@ const submit = async () => {
   }
 }
 
+
 ;(async () => {
   try {
     const { data } = await apiAuth.get('/users/all')
     members.push(...data.result)
+
+    // 統一處理 fallback avatar
     members.forEach(member => {
-      member.image = member.image || `https://source.boringavatars.com/beam/256/${member.account}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
+      const seed = encodeURIComponent(member.account || 'default')
+      member.image =
+        member.image && member.image.trim() !== ''
+          ? member.image
+          : `https://source.boringavatars.com/beam/256/${seed}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
     })
   } catch (error) {
     Swal.fire({
@@ -313,5 +328,6 @@ const submit = async () => {
       text: error?.response?.data?.message || '發生錯誤'
     })
   }
-})()
+})
+
 </script>
