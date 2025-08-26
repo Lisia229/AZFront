@@ -15,10 +15,12 @@ export const useUserStore = defineStore(
     const role = ref(0)
     const love = ref([])
 
-    const isLogin = computed(() => token.value.length > 0)
-    const isAdmin = computed(() => role.value === 1)
-
-    const fallbackAvatar = acc => `https://api.dicebear.com/9.x/beam/svg?seed=${encodeURIComponent(acc)}&size=256&colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
+    const isLogin = computed(() => {
+      return token.value.length > 0
+    })
+    const isAdmin = computed(() => {
+      return role.value === 1
+    })
 
     const login = async form => {
       try {
@@ -28,7 +30,7 @@ export const useUserStore = defineStore(
         email.value = data.result.email
         cart.value = data.result.cart
         role.value = data.result.role
-        image.value = data.result.image && data.result.image.trim() !== '' ? data.result.image : fallbackAvatar(data.result.account)
+        image.value = data.result.image || `https://source.boringavatars.com/beam/256/${account.value}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
         love.value = data.result.love
         Swal.fire({
           icon: 'success',
@@ -76,7 +78,7 @@ export const useUserStore = defineStore(
         email.value = data.result.email
         cart.value = data.result.cart
         role.value = data.result.role
-        image.value = data.result.image && data.result.image.trim() !== '' ? data.result.image : fallbackAvatar(data.result.account)
+        image.value = data.result.image || `https://source.boringavatars.com/beam/256/${account.value}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
         love.value = data.result.love
       } catch (error) {
         logout()
