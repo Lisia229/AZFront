@@ -30,15 +30,7 @@ export const useUserStore = defineStore(
         email.value = data.result.email
         cart.value = data.result.cart
         role.value = data.result.role
-
-        // ---------------- avatar 改寫 ----------------
-        const encodedAccount = encodeURIComponent(account.value)
-        image.value =
-          data.result.image && data.result.image.trim() !== ''
-            ? data.result.image
-            : `https://avatars.dicebear.com/api/beam/${encodedAccount}.svg?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
-        // -------------------------------------------
-
+        image.value = data.result.image || `https://source.boringavatars.com/beam/256/${account.value}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
         love.value = data.result.love
         Swal.fire({
           icon: 'success',
@@ -86,15 +78,7 @@ export const useUserStore = defineStore(
         email.value = data.result.email
         cart.value = data.result.cart
         role.value = data.result.role
-
-        // ---------------- avatar 改寫 ----------------
-        const encodedAccount = encodeURIComponent(account.value)
-        image.value =
-          data.result.image && data.result.image.trim() !== ''
-            ? data.result.image
-            : `https://avatars.dicebear.com/api/beam/${encodedAccount}.svg?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
-        // -------------------------------------------
-
+        image.value = data.result.image || `https://source.boringavatars.com/beam/256/${account.value}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
         love.value = data.result.love
       } catch (error) {
         logout()
