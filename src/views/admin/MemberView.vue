@@ -281,7 +281,7 @@ const submit = async () => {
     const { data } = await apiAuth.patch('/users/edituser', fd)
     const idx = members.findIndex(index => index._id === form._id)
     members[idx] = data.result
-    members[idx].image = members[idx].image || `https://api.dicebear.com/9.x/thumbs/svg?eyes=variant1W10,variant1W12,variant1W14,variant9W10,variant5W14,variant4W10`
+    members[idx].image = members[idx].image || `https://source.boringavatars.com/beam/256/${account.value}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
     form.editing = false
 
     Swal.fire({
@@ -304,7 +304,7 @@ const submit = async () => {
     const { data } = await apiAuth.get('/users/all')
     members.push(...data.result)
     members.forEach(member => {
-      member.image = member.image || `https://api.dicebear.com/9.x/thumbs/svg?eyes=variant1W10,variant1W12,variant1W14,variant9W10,variant5W14,variant4W10`
+      member.image = member.image || `https://source.boringavatars.com/beam/256/${member.account}?colors=ffabab,ffdaab,ddffab,abe4ff,d9abff`
     })
   } catch (error) {
     Swal.fire({
